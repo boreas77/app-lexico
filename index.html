@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Caja de Lexico ELE</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-labelledby="app-title">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Diccionario personal</p>
+            <h1 id="app-title">Caja de Lexico ELE</h1>
+          </div>
+          <div class="stats" aria-live="polite">
+            <span id="word-count">0 palabras</span>
+            <span id="box-count">0 cajas</span>
+          </div>
+        </header>
+
+        <div class="content-grid">
+          <section class="panel boxes-panel" aria-labelledby="boxes-title">
+            <div class="section-heading">
+              <h2 id="boxes-title">Cajas</h2>
+              <p>Crea una caja por tema, unidad o situacion comunicativa.</p>
+            </div>
+
+            <form id="box-form" class="box-form">
+              <label>
+                Nueva caja
+                <input id="new-box-name" name="newBoxName" type="text" autocomplete="off" placeholder="Ej. comida, viajes, clase A2">
+              </label>
+              <button type="submit" class="primary-button">Crear caja</button>
+            </form>
+
+            <ul id="box-list" class="box-list" aria-label="Cajas de vocabulario"></ul>
+          </section>
+
+          <section class="panel entry-panel" aria-labelledby="entry-title">
+            <div class="section-heading">
+              <p class="active-label">Caja activa</p>
+              <h2 id="active-box-name">Mi primera caja</h2>
+              <p id="active-box-meta">0 palabras en esta caja</p>
+            </div>
+
+            <form id="word-form" class="word-form">
+              <label>
+                Palabra en espanol
+                <input id="spanish-word" name="spanishWord" type="text" autocomplete="off" placeholder="Ej. merendar" required>
+              </label>
+
+              <label>
+                Traduccion o significado
+                <input id="translation" name="translation" type="text" autocomplete="off" placeholder="Ej. to have an afternoon snack" required>
+              </label>
+
+              <button type="submit" class="primary-button">Guardar en esta caja</button>
+            </form>
+          </section>
+
+          <section class="panel list-panel" aria-labelledby="list-title">
+            <div class="section-heading row-heading">
+              <div>
+                <h2 id="list-title">Vocabulario de la caja</h2>
+                <p>Todo queda guardado en este navegador.</p>
+              </div>
+              <button id="clear-box" type="button" class="ghost-button">Vaciar caja</button>
+            </div>
+
+            <div id="empty-state" class="empty-state">
+              Anade tu primera palabra dentro de esta caja.
+            </div>
+
+            <ul id="word-list" class="word-list" aria-live="polite"></ul>
+          </section>
+
+          <section class="panel story-panel" aria-labelledby="story-title">
+            <div class="section-heading row-heading">
+              <div>
+                <h2 id="story-title">Historia divertida</h2>
+                <p>Genera una mini historia usando las palabras como elementos reales del relato.</p>
+              </div>
+              <button id="generate-story" type="button" class="primary-button compact">Generar</button>
+            </div>
+
+            <article id="story-output" class="story-output">
+              Guarda al menos tres palabras en esta caja y pulsa generar.
+            </article>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
