@@ -75,6 +75,55 @@ h1 {
   letter-spacing: 0;
 }
 
+.brand-title {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.03em;
+}
+
+.eye-o {
+  position: relative;
+  display: inline-block;
+  width: 0.86em;
+  height: 0.58em;
+  margin: 0 0.01em;
+  border: 0.055em solid #1c1711;
+  border-radius: 52% 48% 52% 48% / 64% 66% 34% 36%;
+  background:
+    radial-gradient(circle at 42% 42%, rgba(255, 255, 205, 0.95) 0 8%, transparent 9%),
+    radial-gradient(circle at 50% 50%, #f9d84a 0 35%, #d99a19 66%, #8f5f0b 100%);
+  box-shadow:
+    inset 0 0 0.08em rgba(255, 248, 165, 0.8),
+    inset 0 -0.12em 0.2em rgba(72, 36, 8, 0.42),
+    0 0 0.14em rgba(217, 154, 25, 0.5);
+  transform: translateY(0.05em) rotate(-3deg);
+}
+
+.eye-o::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 12%;
+  width: 16%;
+  height: 76%;
+  border-radius: 999px;
+  background: #16110c;
+  transform: translateX(-50%);
+  box-shadow: 0 0 0.04em rgba(0, 0, 0, 0.8);
+}
+
+.eye-o::after {
+  content: "´";
+  position: absolute;
+  left: 51%;
+  top: -0.76em;
+  color: #1c1711;
+  font-size: 0.72em;
+  font-weight: 900;
+  line-height: 1;
+  transform: translateX(-50%) rotate(8deg);
+}
+
 h2 {
   margin-bottom: 6px;
   font-size: 1.2rem;
