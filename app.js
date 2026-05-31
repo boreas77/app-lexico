@@ -244,7 +244,7 @@ function clearBox() {
     return;
   }
 
-  const confirmed = window.confirm(`Vaciar todas las palabras de "${box.name}"?`);
+  const confirmed = window.confirm(`¿Vaciar todas las palabras de "${box.name}"?`);
   if (!confirmed) {
     return;
   }
@@ -273,11 +273,11 @@ function sentenceForWord(item, index) {
   const word = item.spanish;
   const article = articleFor(word);
   const templates = [
-    `Al entrar, vio ${article} ${word} sobre la mesa y entendio por que todos hablaban en voz baja.`,
-    `Despues, ${article} ${word} cambio el plan: nadie podia continuar la aventura sin acercarse y observarlo bien.`,
-    `En la esquina aparecio ${article} ${word}, tan importante que el grupo decidio protegerlo hasta el final.`,
-    `Cuando parecia que todo estaba perdido, ${article} ${word} ayudo a resolver el problema de una forma inesperada.`,
-    `Antes de salir, cada estudiante tuvo que usar ${article} ${word} en una accion concreta para demostrar que lo habia comprendido.`
+    `Al entrar, vio ${article} ${word} sobre la mesa y entendió por qué todos hablaban en voz baja.`,
+    `Después, ${article} ${word} cambió el plan: nadie podía continuar la aventura sin acercarse y observarlo bien.`,
+    `En la esquina apareció ${article} ${word}, tan importante que el grupo decidió protegerlo hasta el final.`,
+    `Cuando parecía que todo estaba perdido, ${article} ${word} ayudó a resolver el problema de una forma inesperada.`,
+    `Antes de salir, cada estudiante tuvo que usar ${article} ${word} en una acción concreta para demostrar que lo había comprendido.`
   ];
 
   return templates[index % templates.length];
@@ -294,28 +294,28 @@ function generateStory() {
 
   const selected = shuffle(words).slice(0, Math.min(8, words.length));
   const places = [
-    "una clase de espanol que se habia convertido en una aventura",
-    "un mercado donde cada puesto escondia una sorpresa",
-    "una biblioteca en la que los libros se movian solos",
+    "una clase de español que se había convertido en una aventura",
+    "un mercado donde cada puesto escondía una sorpresa",
+    "una biblioteca en la que los libros se movían solos",
     "un viaje de intercambio lleno de malentendidos divertidos"
   ];
   const characters = [
     "Lina, una estudiante curiosa",
-    "Amir, que siempre hacia preguntas dificiles",
-    "Sofia, la companera que tomaba notas de todo",
-    "Mateo, que aprendia mejor cuando algo salia mal"
+    "Amir, que siempre hacía preguntas difíciles",
+    "Sofía, la compañera que tomaba notas de todo",
+    "Mateo, que aprendía mejor cuando algo salía mal"
   ];
   const ending = pickRandom([
-    "Al final, la caja dejo de ser una lista y se convirtio en un recuerdo completo.",
+    "Al final, la caja dejó de ser una lista y se convirtió en un recuerdo completo.",
     "Desde entonces, cuando repasaban la caja, recordaban la escena como si la hubieran vivido.",
-    "Y asi, sin darse cuenta, el grupo aprendio el vocabulario dentro de una historia.",
-    "La profesora sonrio, porque las palabras ya no estaban sueltas: tenian contexto."
+    "Y así, sin darse cuenta, el grupo aprendió el vocabulario dentro de una historia.",
+    "La profesora sonrió, porque las palabras ya no estaban sueltas: tenían contexto."
   ]);
 
   const storySentences = selected.map(sentenceForWord).join(" ");
   const glossary = selected.map((item) => `${item.spanish}: ${item.translation}`).join(" | ");
   const paragraphs = [
-    `En ${pickRandom(places)}, ${pickRandom(characters)} abrio la caja "${box.name}" y encontro una historia escondida.`,
+    `En ${pickRandom(places)}, ${pickRandom(characters)} abrió la caja "${box.name}" y encontró una historia escondida.`,
     storySentences,
     ending,
     glossary
